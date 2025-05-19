@@ -9,7 +9,7 @@ public class Jogos {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column (name = " id_jogo")
-    private String idJogo;
+    private Long idJogo;
 
     @Column (name = "nomedojogo", length = 100, nullable = false, unique = false)
     private String nomeDoJogo;
@@ -24,14 +24,14 @@ public class Jogos {
     private String imagemCapa;
 
     @Column (name = "duracao_media")
-    private int duracaoMedia;
+    private float duracaoMedia;
 
     @Column (name = "descricao")
     private String descricao;
 
     @Column (name = "created_at")
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
     @Column (name = "updated_at")
-    private LocalDateTime update_at;
+    private LocalDateTime updateAt;
 
 }
