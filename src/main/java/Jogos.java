@@ -1,10 +1,8 @@
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
-public class Jogos {
+public class Jogos extends BaseEntity {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -28,10 +26,5 @@ public class Jogos {
 
     @Column (name = "descricao")
     private String descricao;
-
-    @Column (name = "created_at")
-    private LocalDateTime createdAt;
-    @Column (name = "updated_at")
-    private LocalDateTime updateAt;
 
 }

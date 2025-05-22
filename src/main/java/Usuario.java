@@ -1,10 +1,9 @@
 import jakarta.persistence.*;
 import jakarta.persistence.Id;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
-public class Usuario {
+public class Usuario extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +31,4 @@ public class Usuario {
     @Column (name = "nickname", length = 45, nullable = false, unique = true)
     private String nickname;
 
-    @Column (name = "created_at")
-    private LocalDateTime createdAt;
-    @Column (name = "updated_at")
-    private LocalDateTime updatedAt;
 }
