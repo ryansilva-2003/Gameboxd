@@ -1,7 +1,9 @@
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
+@Table (name = "jogos")
 public class Jogos extends BaseEntity {
 
     @Id
@@ -27,4 +29,68 @@ public class Jogos extends BaseEntity {
     @Column (name = "descricao")
     private String descricao;
 
+    @ManyToMany
+    @JoinTable(
+            name = "jogos_has_genero",
+            joinColumns = @JoinColumn(name = "id_jogo"),
+            inverseJoinColumns = @JoinColumn(name = "id_genero")
+    )
+    private List<Genero> generos;
+
+
+    public String getNomeDoJogo() {
+        return nomeDoJogo;
+    }
+
+    public void setNomeDoJogo(String nomeDoJogo) {
+        this.nomeDoJogo = nomeDoJogo;
+    }
+
+    public String getDesenvolvedores() {
+        return desenvolvedores;
+    }
+
+    public void setDesenvolvedores(String desenvolvedores) {
+        this.desenvolvedores = desenvolvedores;
+    }
+
+    public Long getIdJogo() {
+        return idJogo;
+    }
+
+    public void setIdJogo(Long idJogo) {
+        this.idJogo = idJogo;
+    }
+
+    public LocalDate getAnoDeLancamento() {
+        return anoDeLancamento;
+    }
+
+    public void setAnoDeLancamento(LocalDate anoDeLancamento) {
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public String getImagemCapa() {
+        return imagemCapa;
+    }
+
+    public void setImagemCapa(String imagemCapa) {
+        this.imagemCapa = imagemCapa;
+    }
+
+    public float getDuracaoMedia() {
+        return duracaoMedia;
+    }
+
+    public void setDuracaoMedia(float duracaoMedia) {
+        this.duracaoMedia = duracaoMedia;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 }

@@ -2,6 +2,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table (name = "Status_jogo")
 public class StatusJogo extends BaseEntity implements Serializable {
 
     @Id
@@ -29,6 +30,14 @@ public class StatusJogo extends BaseEntity implements Serializable {
 
     public void setIdStatus(Long idStatus){
         this.idStatus = idStatus;
+    }
+
+    public StatusEnum getStatus(){
+        return status;
+    }
+
+    public void setStatus(StatusEnum status){
+        this.status = status;
     }
 
     public Jogos getJogo(){

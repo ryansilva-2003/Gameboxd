@@ -1,6 +1,7 @@
 import jakarta.persistence.*;
 
 @Entity
+@Table (name = "avaliacao")
 public class Avaliacao extends BaseEntity{
 
     @Id

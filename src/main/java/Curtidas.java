@@ -2,10 +2,11 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table (name = "curtidas")
 public class Curtidas extends BaseEntity implements Serializable {
 
     @EmbeddedId
-    private CurtidasId Id;
+    private CurtidasId id;
 
     @ManyToOne
     @MapsId("idComentario")
@@ -20,11 +21,11 @@ public class Curtidas extends BaseEntity implements Serializable {
     public Curtidas (){}
 
     public CurtidasId getId(){
-        return Id;
+        return id;
     }
 
     public void setId(CurtidasId id){
-        this.Id = id;
+        this.id = id;
     }
 
     public Comentario getComentario(Comentario comentario){
