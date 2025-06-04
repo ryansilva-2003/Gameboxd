@@ -1,3 +1,5 @@
+package com.firstproject;
+
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.UUID;

@@ -1,3 +1,5 @@
+package com.firstproject;
+
 import java.io.Serializable;
 import java.util.Objects;
 

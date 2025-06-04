@@ -1,4 +1,8 @@
+package com.firstproject;
+
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -11,7 +15,8 @@ public class Jogos extends BaseEntity {
     @Column (name = " id_jogo")
     private Long idJogo;
 
-    @Column (name = "nomedojogo", length = 100, nullable = false, unique = false)
+    @Column (name = "nome_do_jogo", length = 100, nullable = false)
+    @NotBlank(message = "Esse campo é obrigatório")
     private String nomeDoJogo;
 
     @Column (name = "desenvolvedores")
@@ -21,6 +26,7 @@ public class Jogos extends BaseEntity {
     private LocalDate anoDeLancamento;
 
     @Column (name = "imagem_capa", length = 300, nullable = false)
+    @NotBlank (message = "Esse campo é obrigatório")
     private String imagemCapa;
 
     @Column (name = "duracao_media")

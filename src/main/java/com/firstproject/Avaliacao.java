@@ -1,4 +1,7 @@
+package com.firstproject;
+
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table (name = "avaliacao")
@@ -10,6 +13,7 @@ public class Avaliacao extends BaseEntity{
     private Long idAvaliacao;
 
     @Column (name = "nota", nullable = false)
+    @NotBlank (message = "Este campo é obrigatório")
     private int nota;
 
     @Column (name = "resenha", columnDefinition = "LONGTEXT")

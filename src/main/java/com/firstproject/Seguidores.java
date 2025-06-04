@@ -1,3 +1,5 @@
+package com.firstproject;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -19,19 +21,27 @@ public class Seguidores extends BaseEntity{
 
     public Seguidores(){}
 
-    public Usuario getSeguidor(){
+    public SeguidoresId getId() {
+        return id;
+    }
+
+    public void setId(SeguidoresId id) {
+        this.id = id;
+    }
+
+    public Usuario getSeguidor() {
         return seguidor;
     }
 
-    public void Seguidor(Usuario Seguidor){
+    public void setSeguidor(Usuario seguidor) {
         this.seguidor = seguidor;
     }
 
-    public String getSeguindo(){
+    public Usuario getSeguindo() {
         return seguindo;
     }
 
-    public void setSeguindo(Usuario seguindo){
+    public void setSeguindo(Usuario seguindo) {
         this.seguindo = seguindo;
     }
 }

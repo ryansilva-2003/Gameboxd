@@ -1,3 +1,5 @@
+package com.firstproject;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -10,9 +12,6 @@ public class RecuperacaoSenha extends BaseEntity{
 
     @Column(name = "token", length = 100, nullable = false, unique = true)
     private String token;
-
-   // @Column(nullable = false)
-    //private LocalDateTime expiracao;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
